@@ -14,8 +14,23 @@ public class Book {
     private String author;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "book", fetch = FetchType.LAZY)
     private List<Review> reviews;
-
+    
+	/*
+	 * @OneToMany(cascade = CascadeType.ALL, mappedBy = "book", fetch =
+	 * FetchType.LAZY) private List<Products> products;
+	 
+    
+    
     @JsonManagedReference
+    public List<Products> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Products> products) {
+		this.products = products;
+	}*/
+
+	@JsonManagedReference
     public List<Review> getReviews() {
         return reviews;
     }
